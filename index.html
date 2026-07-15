@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ứng dụng hệ thống cảnh báo và xua đuổi động vật hoang dã</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/icon/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Ứng dụng hệ thống cảnh báo và xua đuổi động vật hoang dã</h1>
+    </div>
+
+    <div class="main-content">
+        <!-- CAMERA -->
+        <div class="cam">
+            <div class="cam1">
+                <div class="screen">
+                    <h2>Camera 1</h2>
+                    <img src="./assets/voi.jpg" alt="cam1" class="voi">
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTROL PANEL -->
+        <div class="control-panel">
+            <!-- TAB BAR -->
+            <div class="tab-bar">
+                <button class="tab-btn active" onclick="switchTab('canh-bao', this)">Cảnh báo</button>
+                <button class="tab-btn" onclick="switchTab('dieu-khien', this)">Điều khiển</button>
+                <button class="tab-btn" onclick="switchTab('thong-ke', this)">Thống kê</button>
+            </div>
+
+            <!-- CẢNH BÁO -->
+            <div class="tab-content active" id="canh-bao">
+                <div class="title">Cảnh báo phát hiện</div>
+                <div class="thong-bao">
+                    Cam 1 : PHÁT HIỆN VOI : 9:04
+                </div>
+                <div class="title">Phân tích</div>
+                <div class="phan-tich">
+                    <span class="nhan-phan-tich">Loài</span>
+                    <span class="gia-tri-phan-tich">Voi</span>
+                </div>
+                <div class="phan-tich">
+                    <span class="nhan-phan-tich">Số lượng</span>
+                    <span class="gia-tri-phan-tich">1</span>
+                </div>
+                <div class="phan-tich">
+                    <span class="nhan-phan-tich">Chỉ số hung dữ</span>
+                    <span class="gia-tri-phan-tich">8/10</span>
+                </div>
+                <div class="phan-tich">
+                    <span class="nhan-phan-tich">Mức độ tin cậy</span>
+                    <span class="gia-tri-phan-tich">0.8/1</span>
+                </div>
+            </div>
+
+            <!-- ĐIỀU KHIỂN -->
+            <div class="tab-content" id="dieu-khien">
+                <div class="title">Thông báo</div>
+                <div class="control-item">
+                    <span class="control-label">Gửi tin nhắn SMS</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked onchange="toggleState(this)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="control-item">
+                    <span class="control-label">Phát loa cảnh báo cho người dân</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked onchange="toggleState(this)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <div class="title">Xử lí</div>
+                <div class="control-item">
+                    <span class="control-label">Âm thanh xua đuổi</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" onchange="toggleState(this)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="control-item">
+                    <span class="control-label">Đèn LED nhấp nháy</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" onchange="toggleState(this)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="control-item">
+                    <span class="control-label">Hàng rào điện</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked onchange="toggleState(this)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="control-item">
+                    <span class="control-label">Gửi cảnh báo cho kiểm lâm</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked onchange="toggleState(this)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- THỐNG KÊ -->   
+            <div class="tab-content" id="thong-ke">
+                <div class="title">Thống kê trong tuần</div>
+                <div class="lich-su">
+                    <span class="log-cam">Cam 1</span>
+                    <span class="log-date">6/7 10:19</span>
+                    <span class="log-event">Phát hiện <span>VOI</span></span>
+                </div>
+                <div class="lich-su">
+                    <span class="log-cam">Cam 1</span>
+                    <span class="log-date">8/7 8:19</span>
+                    <span class="log-event">Phát hiện <span>VOI</span></span>
+                </div>
+                <div class="title">Phân tích trong tuần</div>
+                <div class="phan-tich-tuan">
+                    <div class="phan-tich-canh-bao">
+                        <div class="cam-name">Cam 1 — VOI · 2 lần</div>
+                        <div class="chi-tiet">Khu vực di chuyển và kiếm ăn thường xuyên của voi</div>
+                        <div class="ket-luan">⟶ Số lượng voi tăng, cần tăng cường giám sát</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
